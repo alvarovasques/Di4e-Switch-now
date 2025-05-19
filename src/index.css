@@ -1,0 +1,291 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-primary: #70BDA7;
+  --color-secondary: #6366F1; 
+  --color-bg: #ffffff;
+  --color-text: #1a1a1a;
+  --color-text-secondary: #4b5563;
+  --color-border: #e5e7eb;
+  --color-input-bg: #ffffff;
+  --color-input-border: #d1d5db;
+  --color-card-bg: #ffffff;
+  --color-card-hover: #f9fafb;
+  --color-hover: rgba(0, 0, 0, 0.05);
+  --font-family: 'Inter';
+}
+
+.dark {
+  --color-bg: #121212;
+  --color-text: #e5e7eb;
+  --color-text-secondary: #9ca3af;
+  --color-border: #2f2f2f;
+  --color-input-bg: #1c1c1e;
+  --color-input-border: #3a3a3a;
+  --color-card-bg: #1e1e1e;
+  --color-card-hover: #2a2a2a;
+  --color-hover: rgba(255, 255, 255, 0.05);
+}
+
+/* Base styles */
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+}
+
+/* Theme transitions */
+* {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Theme-aware component styles */
+.bg-white {
+  background-color: var(--color-card-bg) !important;
+}
+
+.text-gray-900 {
+  color: var(--color-text) !important;
+}
+
+.text-gray-600, .text-gray-500 {
+  color: var(--color-text-secondary) !important;
+}
+
+.border {
+  border-color: var(--color-border) !important;
+}
+
+/* Hover states */
+.hover\:bg-gray-50:hover {
+  background-color: var(--color-hover) !important;
+}
+
+.hover\:bg-gray-100:hover {
+  background-color: var(--color-hover) !important;
+}
+
+/* Input styles */
+input, select, textarea {
+  background-color: var(--color-input-bg) !important;
+  border-color: var(--color-input-border) !important;
+  color: var(--color-text) !important;
+}
+
+input::placeholder, select::placeholder, textarea::placeholder {
+  color: var(--color-text-secondary) !important;
+}
+
+/* Dark mode specific overrides */
+.dark .bg-gray-100 {
+  background-color: rgba(255, 255, 255, 0.05) !important;
+}
+
+.dark .border-gray-200 {
+  border-color: #2f2f2f !important;
+}
+
+.dark .bg-gray-50 {
+  background-color: rgba(255, 255, 255, 0.03) !important;
+}
+
+.dark .hover\:bg-gray-50:hover {
+  background-color: rgba(255, 255, 255, 0.05) !important;
+}
+
+.dark .text-gray-500 {
+  color: #9ca3af !important;
+}
+
+.dark .text-gray-600 {
+  color: #d1d5db !important;
+}
+
+.dark .text-gray-700 {
+  color: #e5e7eb !important;
+}
+
+.dark .text-gray-900 {
+  color: #f3f4f6 !important;
+}
+
+/* Selected item styles in dark mode */
+.dark .bg-indigo-50 {
+  background-color: rgba(255, 255, 255, 0.08) !important;
+  color: #e5e7eb !important;
+}
+
+.dark .text-indigo-600 {
+  color: #e5e7eb !important;
+}
+
+.dark .border-indigo-500 {
+  border-color: #4a4a4a !important;
+}
+
+/* Status indicators with gray tones in dark mode */
+.dark .bg-green-100 {
+  background-color: rgba(75, 85, 99, 0.2) !important;
+  color: #9ca3af !important;
+}
+
+.dark .bg-red-100 {
+  background-color: rgba(75, 85, 99, 0.2) !important;
+  color: #9ca3af !important;
+}
+
+.dark .bg-yellow-100 {
+  background-color: rgba(75, 85, 99, 0.2) !important;
+  color: #9ca3af !important;
+}
+
+.dark .bg-blue-100 {
+  background-color: rgba(75, 85, 99, 0.2) !important;
+  color: #9ca3af !important;
+}
+
+.dark .bg-purple-100 {
+  background-color: rgba(75, 85, 99, 0.2) !important;
+  color: #9ca3af !important;
+}
+
+.dark .bg-orange-100 {
+  background-color: rgba(75, 85, 99, 0.2) !important;
+  color: #9ca3af !important;
+}
+
+.dark .bg-indigo-100 {
+  background-color: rgba(75, 85, 99, 0.2) !important;
+  color: #9ca3af !important;
+}
+
+/* Keep buttons in their original colors */
+.dark button.bg-indigo-600,
+.dark a.bg-indigo-600 {
+  background-color: #70BDA7 !important;
+  color: #ffffff !important;
+}
+
+.dark button.bg-indigo-600:hover,
+.dark a.bg-indigo-600:hover {
+  background-color: #5BA892 !important;
+}
+
+/* Menu and dropdown styles */
+.dark .menu-content {
+  background-color: var(--color-card-bg);
+  border-color: var(--color-border);
+}
+
+.dark .menu-content button:hover {
+  background-color: var(--color-hover);
+}
+
+/* Table styles */
+.dark thead {
+  background-color: rgba(255, 255, 255, 0.03);
+}
+
+.dark tbody tr:hover {
+  background-color: var(--color-hover);
+}
+
+/* Card and panel styles */
+.dark .bg-white {
+  background-color: var(--color-card-bg);
+}
+
+.dark .shadow-lg {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.2);
+}
+
+/* Button hover states */
+.dark button:not(.bg-indigo-600):hover {
+  background-color: var(--color-hover);
+}
+
+/* Form element focus states */
+.dark input:focus, 
+.dark select:focus, 
+.dark textarea:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 2px rgba(79, 70, 229, 0.2);
+}
+
+/* Scrollbar customization */
+.dark ::-webkit-scrollbar-track {
+  background: var(--color-card-bg);
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* Animation keyframes */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.2s ease-out;
+}
+
+/* Menu animations */
+@keyframes menuEnter {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes menuLeave {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+}
+
+.menu-enter {
+  animation: menuEnter 0.2s ease-out;
+}
+
+.menu-leave {
+  animation: menuLeave 0.2s ease-out;
+}
+
+/* Menu positioning */
+.menu-container {
+  position: relative;
+  display: inline-block;
+}
+
+.menu-content {
+  position: absolute;
+  right: 0;
+  margin-top: 0.5rem;
+  min-width: 12rem;
+  transform-origin: top right;
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  z-index: 50;
+}
